@@ -1,7 +1,9 @@
+#coding=utf-8
 import os
 import errno
 import random
 import math
+#输入测试集数据
 def input_testdata(file_name=None):
     """input the random data from external file """
     x_list = []
@@ -30,6 +32,7 @@ def input_testdata(file_name=None):
     #print "y_list", y_list 
     file_object.close() 
     return x_list, y_list   
+#输入Theta数据
 def input_thetadata(file_name=None):
     """input the random data from external file """
     theta_list = []
@@ -53,6 +56,7 @@ def input_thetadata(file_name=None):
 thetaNum=71
 testx,testy=input_testdata("testdata.txt")
 theta_list=input_thetadata("thetasto.txt")
+#求RMSE
 def rmse(testx,testy,theta_list,thetaNum):
 	hy=0.0
 	tmp=0.0
@@ -65,6 +69,7 @@ def rmse(testx,testy,theta_list,thetaNum):
 		hy=0.0
 	rmse=math.sqrt(tmp/inputx_num)
 	return rmse
+#打印RMSE
 rmse=rmse(testx,testy,theta_list,thetaNum)
 print "RMSE="
 print rmse
